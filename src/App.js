@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Header from "./components/Header/Header";
 import { useState } from "react";
 
@@ -22,19 +22,20 @@ function App() {
       onAboutClick={toggleAbout}
       onContactClick={toggleContact}
       /> 
+      <AnimatePresence>
       {isAboutOpen && (
                 <motion.div
                     className="modal-backdrop"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    initial={{ opacity: 0,  y: "-100vh" }}
+                    animate={{ opacity: 1,  y: 0 }}
+                    exit={{ opacity: 0, y: "100vh" }}
                     onClick={toggleAbout}
                 >
                     <motion.div
                         className="modal-content"
                         initial={{ y: "-100vh" }}
                         animate={{ y: 0 }}
-                        exit={{ y: "-100vh" }}
+                        exit={{ y: "100vh" }}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <h2>About Me</h2>
@@ -45,19 +46,21 @@ function App() {
                     </motion.div>
                 </motion.div>
             )}
+            </AnimatePresence>
+            <AnimatePresence>
             {isContactOpen && (
                 <motion.div
                     className="modal-backdrop"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    initial={{ opacity: 0, y: "-100vh" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: "100vh" }}
                     onClick={toggleContact}
                 >
                     <motion.div
                         className="modal-content"
                         initial={{ y: "-100vh" }}
                         animate={{ y: 0 }}
-                        exit={{ y: "-100vh" }}
+                        exit={{ y: "100vh" }}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <h2>Contact Me</h2>
@@ -67,7 +70,8 @@ function App() {
                         </button>
                     </motion.div>
                 </motion.div>  
-            )}   
+            )}  
+            </AnimatePresence> 
     </div>
   );
 }

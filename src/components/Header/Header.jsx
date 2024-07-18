@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 export default function Header({onAboutClick, onContactClick}) {
     return (
         <motion.div className="header">
+            <div className="page-title">
+                <h1 className="title">Brandon J. Doza</h1>
+            </div>
+            <div className="buttons">
             <motion.button
             className="nav-button"
             whileHover={{scale: 1.3}}
@@ -19,6 +23,7 @@ export default function Header({onAboutClick, onContactClick}) {
             >
               Contact 
             </motion.button>
+            </div>
         </motion.div>
     )
 }
