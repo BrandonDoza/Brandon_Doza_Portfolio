@@ -8,6 +8,7 @@ body {
 }
 
 .app {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,18 +40,30 @@ body {
 }
 
 .modal-backdrop {
-  width: 70%;
-  height: 300px;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  border-radius: 15px;
-  margin-top: 25px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  z-index: 999;
 }
 
 .modal-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  width: 70%; 
+  max-width: 600px; 
+  height: 400px; 
+  background: linear-gradient(to right, #ff7e5f, #feb47b); 
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; 
 }
 
 .close-modal-button {
@@ -64,7 +77,31 @@ body {
 }
 
 .title {
-  margin-left: 15px;
+  margin-left: 25px;
   font-style: italic;
   color: rgb(225, 238, 248);
+}
+
+.photo {
+  width: 20%;
+  height: 10%;
+  margin-left: 50px;
+}
+
+.img {
+  width: 80%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.main {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.job-title {
+  text-align: center;
 }
