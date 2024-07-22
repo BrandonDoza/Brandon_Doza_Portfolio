@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { BoxIconElement } from "boxicons";
 
 export default function Header({onAboutClick, onContactClick}) {
     return (
@@ -13,7 +14,23 @@ export default function Header({onAboutClick, onContactClick}) {
                 </h1>
             </div>
             <div className="buttons">
-            <motion.button
+            <motion.div
+            className="nav-button"
+             whileHover={{scale: 1.5}}
+             whileTap={{scale: 0.8}}
+             onClick={onContactClick}
+             >
+            <box-icon type='solid' color='black' name='envelope' size='md'></box-icon>
+            </motion.div>
+            <motion.div
+            className="nav-button"
+             whileHover={{scale: 1.5}}
+             whileTap={{scale: 0.8}}
+             onClick={onContactClick}
+             >
+            <box-icon name='user' type='solid' color='black' size='md'></box-icon>
+            </motion.div>
+            {/* <motion.button
             className="nav-button"
             whileHover={{scale: 1.3}}
             whileTap={{scale: 0.8}}
@@ -28,7 +45,7 @@ export default function Header({onAboutClick, onContactClick}) {
             onClick={onContactClick}
             >
               Contact 
-            </motion.button>
+            </motion.button> */}
             </div>
         </motion.div>
     )
