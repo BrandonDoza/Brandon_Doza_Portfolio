@@ -128,7 +128,7 @@ function App() {
               onClick={(e) => e.stopPropagation()}
             >
                 <h1>Resume</h1>
-                <object data="/Resume 07_2024.pdf" width="100%" height="600px"/>
+                <object data="/Brandon Doza Resume 08_2024.pdf" width="100%" height="600px"/>
               <motion.button
                 onClick={toggleResume}
                 className="close-modal-button"
